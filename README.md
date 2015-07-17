@@ -5,21 +5,22 @@ This is similar to the touch-and-drag controls on mobile devices with touch scre
 
 SwipeControls is easy to use:
 
-1. "import" three.js library
+1) "import" three.js library
 ```html
 <script src="js/three.js"></script>
 ```
 
-2. "import" SwipeControls.js
+2) "import" SwipeControls.js
 ```html
 <script src="js/SwipeControls.js"></script>
 ```
-3. instantiate SwipeControls object ( pass camera object )
+
+3) instantiate SwipeControls object ( pass camera object )
 ```
 var controls = new THREE.SwipeControls( camera );
 ```
 
-4. update controls in animate function
+4) update controls in animate function
 ```
 function animate() {
 
@@ -33,6 +34,6 @@ function animate() {
 
 }
 ```
-You can adjust the speed of the swipe with: *controls.speed = some_number;*
+You can adjust the speed of the swipe with: **controls.speed = some_number;**
 
-You can adjust the buffer speed of swipe after release with: *controls.swipeBuffer = some_number_between_0_and_1;*
+You can adjust the buffer speed of swipe after release with: **controls.swipeBuffer = some_number_between_0_and_1;**
