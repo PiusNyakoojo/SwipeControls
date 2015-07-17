@@ -1,6 +1,6 @@
 # SwipeControls
 ------------------------
-SwipeControls.js is a script that enables click-and-drag controls in three.js scenes.
+SwipeControls.js enables click-and-drag controls in three.js scenes.
 This is similar to the touch-and-drag controls on mobile devices with touch screens.
 
 SwipeControls is easy to use:
