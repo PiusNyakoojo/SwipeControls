@@ -26,7 +26,7 @@ body
 
 		function init(){
 
-			// Setup------------------------------------------
+			// Setup
 			container = document.getElementById( 'container' );
 
 			scene = new THREE.Scene();
@@ -36,12 +36,10 @@ body
 
 			controls = new THREE.SwipeControls( camera );
 
-			renderer = new THREE.WebGLRenderer( { alpha: true} );
-			renderer.setSize( window.innerWidth, window.innerHeight);
+			renderer = new THREE.WebGLRenderer( { alpha: true } );
+			renderer.setSize( window.innerWidth, window.innerHeight );
 
-			// Add Objects To the Scene HERE-------------------
-
-			// Sphere------------------
+			// Sphere
 			var sphere_geometry = new THREE.SphereGeometry( 1 );
 			var sphere_material = new THREE.MeshNormalMaterial();
 			sphere = new THREE.Mesh( sphere_geometry, sphere_material );
@@ -49,17 +47,18 @@ body
 			sphere.position.x = 2;
 			scene.add( sphere );
 
-			// Cube-------------------
+			// Cube
 			var cube_geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var cube_material = new THREE.MeshBasicMaterial( {color: 0x7777ff, wireframe: false} );
+			var cube_material = new THREE.MeshBasicMaterial( { color: 0x7777ff, wireframe: false } );
 			cube = new THREE.Mesh( cube_geometry, cube_material );
 
 			cube.position.x = -2;
 			scene.add( cube );
 
-			// Final touches-----------------------------------
+			// Final touches
 			container.appendChild( renderer.domElement );
 			document.body.appendChild( container );
+
 		}
 
 		function animate(){
@@ -73,9 +72,11 @@ body
 		}
 
 		function render(){
-			//Render Scene---------------------------------------
+
+			// Render Scene
         	renderer.clear();
 			renderer.render( scene , camera );
+
 		}
 
 		function onWindowResize() {
