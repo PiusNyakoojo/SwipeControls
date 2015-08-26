@@ -43,3 +43,9 @@ You can adjust the buffer speed of swipe after release with:
 ```javascript
 controls.swipeBuffer = some_number_between_0_and_1;
 ```
+
+You can lock scrolling in either axis with:
+```javascript
+controls.lockX = true; // x-axis locked
+controls.lockY = true; // y-axis locked
+```

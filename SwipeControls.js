@@ -8,6 +8,9 @@ THREE.SwipeControls = function( camera, domElement ) {
 	this.speed = 0.01; // speed of swipe
 	this.swipeBuffer = 0.85; // reduction of speed after swipe is released ( between 0 and 1 )
 
+	this.lockX = false;
+	this.lockY = false;
+
 	var mouseDown = false;
 	var timer;
 
@@ -66,18 +69,26 @@ THREE.SwipeControls = function( camera, domElement ) {
 	onMouseMove = function( event ) {
 
 		if ( mouseDown ) {
-		
-			newMouseX = event.clientX;
-			deltaMouseX = oldMouseX - newMouseX;
-			oldMouseX = newMouseX;
 			
-			newMouseY = event.clientY;
-			deltaMouseY = oldMouseY - newMouseY;
-			oldMouseY = newMouseY;
+			if ( !this.lockX ) {
 
-			clearTimeout(timer);
+				newMouseX = event.clientX;
+				deltaMouseX = oldMouseX - newMouseX;
+				oldMouseX = newMouseX;
+
+			}
 			
-			timer = setTimeout(mouseStopped, 20);
+			if ( !this.lockY ) {
+
+				newMouseY = event.clientY;
+				deltaMouseY = oldMouseY - newMouseY;
+				oldMouseY = newMouseY;
+
+			}
+
+			clearTimeout( timer );
+			
+			timer = setTimeout( mouseStopped, 20 );
 			
 		}
 
