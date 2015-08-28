@@ -11,6 +11,10 @@ THREE.SwipeControls = function( camera, domElement ) {
 	this.lockX = false;
 	this.lockY = false;
 
+	// internals
+
+	var scope = this;
+
 	var mouseDown = false;
 	var timer;
 
@@ -70,7 +74,7 @@ THREE.SwipeControls = function( camera, domElement ) {
 
 		if ( mouseDown ) {
 			
-			if ( !this.lockX ) {
+			if ( !scope.lockX ) {
 
 				newMouseX = event.clientX;
 				deltaMouseX = oldMouseX - newMouseX;
@@ -78,7 +82,7 @@ THREE.SwipeControls = function( camera, domElement ) {
 
 			}
 			
-			if ( !this.lockY ) {
+			if ( !scope.lockY ) {
 
 				newMouseY = event.clientY;
 				deltaMouseY = oldMouseY - newMouseY;
