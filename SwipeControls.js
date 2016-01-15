@@ -66,28 +66,32 @@ THREE.SwipeControls = function( camera, domElement ) {
 		switch( type ) {
 			case "top":
 				if ( value < bottomLimit ) {
-					console.log( "Invalid: Top Limit must be greater than Bottom Limit" );
+					topLimit = bottomLimit;
+					bottomLimit = value;
 				} else {
 					topLimit = value;
 				}
 				break;
 			case "bottom":
 				if ( value > topLimit ) {
-					console.log( "Invalid: Bottom Limit must be less than Top Limit" );
+					bottomLimit = topLimit;
+					topLimit = value;
 				} else {
 					bottomLimit = value;
 				}
 				break;
 			case "left":
 				if ( value > rightLimit ) {
-					console.log( "Invalid: Left Limit must be less than Right Limit" );
+					leftLimit = rightLimit;
+					rightLimit = value;
 				} else {
 					leftLimit = value;
 				}
 				break;
 			case "right":
 				if ( value < leftLimit ) {
-					console.log( "Invalid: Right Limit must be greater than Left Limit" );
+					rightLimit = leftLimit;
+					leftLimit = value;
 				} else {
 					rightLimit = value;
 				}
