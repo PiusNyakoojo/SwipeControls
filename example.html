@@ -34,6 +34,7 @@ body
 			camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
 			camera.position.z = 10;
 
+			// Controls
 			controls = new THREE.SwipeControls( camera );
 			//controls.speed = 0.04;
 			//controls.lockX = true;
@@ -82,15 +83,6 @@ body
 			// Render Scene
         	renderer.clear();
 			renderer.render( scene , camera );
-
-		}
-
-		function onWindowResize() {
-
-			camera.aspect = window.innerWidth / window.innerHeight;
-			camera.updateProjectionMatrix();
-
-			renderer.setSize( window.innerWidth, window.innerHeight );
 
 		}
 	</script>
