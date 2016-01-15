@@ -35,6 +35,9 @@ body
 			camera.position.z = 10;
 
 			controls = new THREE.SwipeControls( camera );
+			//controls.speed = 0.04;
+			//controls.lockX = true;
+			//controls.setLimit( "top", 0 ); // Can't scroll up
 
 			renderer = new THREE.WebGLRenderer( { alpha: true } );
 			renderer.setSize( window.innerWidth, window.innerHeight );

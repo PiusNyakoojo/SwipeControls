@@ -49,3 +49,11 @@ You can lock scrolling in either axis with:
 controls.lockX = true; // x-axis locked
 controls.lockY = true; // y-axis locked
 ```
+
+You can set a scroll boundary with:
+```javascript
+controls.setLimit( "top", 0 ); // Prevents user from scrolling above 0
+controls.setLimit( "bottom", -100 ); // Prevents user from scrolling below -100
+controls.setLimit( "left", 0 ); // Prevents user from scrolling to the left of 0
+controls.setLimit( "right", 100 ); // Prevents user from scrolling to the right of 100
+```
